@@ -1,0 +1,14 @@
+/*Testando a diretiva da class criada */
+
+.small-title{
+    font-size: 18px;
+    color:aqua;
+}
+
+.green-title{
+    background: black;
+}
+
+.underline{
+    text-decoration: underline;
+}

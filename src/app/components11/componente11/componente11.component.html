@@ -1,0 +1,15 @@
+
+<h2>Formulário</h2>
+<form action="">
+    <input type="text" [(ngModel)] = "nome" name="nome" placeholder="Digite o seu nome">
+    <input type="number" [(ngModel)]= "idade" name="idade" placeholder="Digite sua idade">
+    <input type="submit" value="Enviar">
+</form>
+
+<div *ngIf = "nome !== ''">
+    <p>Nome é {{nome}}</p>
+    <p>Idade é {{idade}}</p>
+</div>
+
+<!-- Essa funcionalidade do FormsModule já automatiza ação do formulário sem precisar programar o que 
+cada input tera que fazer.-->

@@ -1,0 +1,12 @@
+p{
+    color:black;
+    background: yellow;
+}
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    color:red;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,262 @@
+
+    <div class="classe">
+
+        <h1>Criando componente</h1>
+        
+        <ul>
+            <li>Primeiramente tem que instalar o CLI do angular com: npm install -g @angular/cli</li>
+            <li>Agora podemos criar projetos mais facilmente, utilizaremos o: ng new "nome do projeto" </li>
+            <li>Para testar o projeto basta digitar o comando: ng serve  </li>
+            <li>Podemos alterar os arquivos dentro da pasta de app para refletir mudanças no navegador.</li>
+            <li>Para achar a pasta criada basta apenas usar o o comando: cd "nome da pasta"</li>
+            <li>Para abrir a IDE pelo terminal basta apenas usar o comando: code. </li>
+        </ul>
+        
+        <ul>
+            <li>Vamos entender melhor o que é criado após um "ng new"</li>
+            <li>node_modules: dependencias do projeto</li>
+            <li>src: onde vamos programar a aplicação  </li>
+            <li>src/app: pasta principal para componentes, serviços e etc.</li>
+            <li>Os componentes sao divididos em partes: TS, HTML, CSS e testes.</li>
+            <li>As aplicações globais sao: "index.html", "main.ts", "style.css", "test.ts"</li>
+            <li>Na pasta "assets" é para colocar imagens estáticas</li>
+            <li>Na pasta "environmentes" sao os ambientes que o Angular vai rodar.</li>
+            <li>Na pasta "app" é onde vai programar a aplicação, por exemplo, um evento de click (botão).</li>
+            <li>Na pasta "app" também possui arquivos de configuração, de teste, de html (template) e de estilo (css).</li>
+        </ul>
+        
+        <ul>
+            <li>IMPORTANTE!!! Para criar um componente podemos utilizar o CLI;</li>
+            <li>o comando é: ng generate component "nome_do_componente"</li>
+            <li>Pode criar uma pasta: ng generate component  nome_da pasta/nome_do_componente </li>
+            <li>É feito no terminal os comandos - para abrir o terminal basta ir com o botao direito do mouse e clicar em "Abrir terminal integrado".;</li>
+            <li>Todos os arquivos necessários serão criados no projeto;</li>
+            <li>Repare tb que será criado uma pasta com os componentes criados na API;</li>
+            <li>E vai ter um arquivo atualizado (UPDATE) chamado "app.module.ts";</li>
+            <li>Que corresponde ao arquivo central de configuração da aplicação, onde fica declarado esse componente criado;</li>
+            <li>Ou seja, esse arquivo fica mapeando a aplicação;</li>
+            <li>Para importar o componente basta utilizar o seu "selector" em um HTML de outro componente;</li>
+            <li>Esse selector "app-componente1" pode ser visto no caminho denominado "componente1.component.ts"</li>
+            <li>Esse seletor do componente criado que vai ser usado para importar os elementos;</li>
+        </ul>
+        
+        
+        <h3>Importando o componente criado</h3>
+        <!-- O que tiver no arquivo componente criado é o que vai ser importado o seu seletor .
+        Foi criado o componente: "primeiro-componente"-->
+        <app-componente1></app-componente1>
+        
+        <p>Os estilos CSS feito no paragrafo criado do componente1 não vai interferir nesse paragrafo.</p>
+        </div>
+        
+        <div class="classe">
+        <h1>Interpolação de Dados</h1>
+        <ul>
+            <li>A interpolação de dados é um recurso que vai nos ensinar a trabalhar com os componentes do angular;</li>
+            <li>Vamos criar nossas variaveis no arquivo .ts, dentro da classe;</li>
+            <li>Ou seja, estas variáveis são propriedades (atributos) da classe</li>
+            <li>E então teremos acesso a estes dados no arquivo .html, o template;</li>
+            <li>A impressão é feita através de: duas chaves e dentro das chaves a propriedade; </li>
+        </ul>
+
+        <ul>
+            <li>Os estilos em aplicações de Angular podem ser feitos de duas maneiras:</li>
+            <li>Global: utilizando o arquivo "style.css", que fica em src;</li>
+            <li>Scoped: estilo a nível de componente, criamos quando damos um generate;</li>
+        </ul>
+        
+        <app-componente2></app-componente2>
+        </div>
+        
+        <div class="classe">
+        <h1>Compartilhando dados</h1>
+        <ul>
+            <li>Em angular podemos compartilhar dados do componente pai com o componente filho;</li>
+            <li>Para isso vamos disponibilizar na chamada do componente o nome do dado que será recebido com a seguinte sintaxe: [dado];</li>
+            <li>E no código .ts do componente filho vamos utilizar o decorator @Input, que tem como papel entregar o dado para o template;</li>
+            <li>Vamos criar um componente: ng generate component components/componente3</li>
+            <li>vamos importar esse componente criado para o componente pai que fica no arquivo "app.component.html";</li>
+            <li>Dentro do arquivo "app.component.ts" que vai ter os dados para poder compartilhar;</li>
+            <li>Por exemplo, vou criar uma propriedade chamada "userName" para compartilhar os dados do Joaquim para outros componentes;</li>
+            <li>Porém é preciso importar o modulo, no caso, o "Input" que vai ser declarado dentro do "import" do arquivo "parent-data.components.ts";</li>
+            <li>Depois, vamos chamar e manipular esse Input para compartilhar a propriedade name;</li>
+            <li>Por fim, podemos atribuir um valor a essa propriedade dentro do arquivo "componente3.component.html"</li>
+            <li>Portanto, vão ser utilizados os seguintes arquivos nas respectiva ordem:</li>
+            <li>(1) app.component.ts (2) componente3.components.ts (3) componente3.component.html (4) app.component.html </li>
+        </ul>
+        
+        <app-componente3 [name]="userName" [idade]="idadeName" [ud]="userData"></app-componente3>
+        </div>
+        
+        <div class="classe">
+        <h1>Diretivas</h1>
+        <ul>
+            <li>Podem realizar diversas funções no sistema, como aplicar estilos a um elemento no nosso template;</li>
+            <li>Elas começam sempre com ng, o nome fica como: ngAlgumaCoisa;</li>
+            <li>Vamos inserir diretivas no CSS no arquivo "componente4.components.ts" e concatenar as propriedades na tag html;</li>
+            <li>Vamos inserir diretivas de class tb para depois manipular no seu CSS.</li>
+        </ul>
+        
+        <app-componente4></app-componente4>
+        
+        </div>
+        
+        <div class="classe">
+        <h1>Renderização condicional</h1>
+        <ul>
+            <li>É possivel exibir determinado conteúdo por meio de uma condicional;</li>
+            <li>Utilizamos a diretiva nglf para isso;</li>
+            <li>Os valores podem ser dinâmicos (propriedades), mas podemos realizar outros tipos de comparação;</li>
+            <li>Há a possibilidade também de imprimir um cenário para validação de falso, com o else.</li>
+        </ul>
+        
+        <app-componente5></app-componente5>
+        
+        </div>
+        
+        <div class="classe">
+        <h1>Eventos</h1>
+        <ul>
+            <li>Podemos ativar eventos nos componentes para disparar algun método;</li>
+            <li>Um evento clássico que utilizamos muito é o click;</li>
+            <li>A sintaxe é: (click)= "algumaFunção()"</li>
+            <li>Os métodos ficam na classe;</li>
+        </ul>
+        
+        <p>Exibindo as mensagens:</p>
+        <app-componente6></app-componente6>
+        
+        </div>
+        
+        <div class="classe">
+            <h1>Emitindo Eventos</h1>
+            <ul>
+                <li>Podemos comunicar eventos de um componente filho para o pai;</li>
+                <li>Para isso vamos precisar importar o @Output, que vai fazer a saída do evento do componente filho;</li>
+                <li>Vai precisar também importar o EventEmiter para poder enviar o evento.</li>
+                <li>Na tag de invocação do componente do template, escolhemos um método para executar quando o evento for emitido;</li>
+            </ul>
+            
+            <app-componente7></app-componente7>
+        </div>
+        
+        <div class="classe">
+            <h1>Renderização de Listas</h1>
+            <ul>
+                <li>Outro recurso importante é o loop em listas;</li>
+                <li>Para isso vamos precisar de uma propriedade com os itens da lista;</li>
+                <li>E no template do componente vamos utilizar o *ngFor.</li>
+                <li>Podemos renderizar template baseado em dados;</li>
+            </ul>
+            
+            <app-componente8></app-componente8>
+            
+        </div>
+
+        <div class="classe">
+            <h1>Importância das Interfaces</h1>
+            <ul>
+                <li>Toda entidade que devemos trabalhar precisa de interface;</li>
+                <li>Isso vai tornar nosso código mais simples ao longo do programa;</li>
+                <li>Padronizando é facilmente fazer a manutenção;</li>
+                <li>Vamos implementar uma interface na nossa lista de animais;</li>
+                <li>E fazer um evento que também utilizará este recurso.</li>
+                <li>IMPORTANTE! Vai ser criado um arquivo "Animal.ts" dentro da pasta app.</li>
+                <li>A extensão ".ts" é de typeScript - é sempre baseada em TypeScript.</li>
+                <li>O arquivo "Animal.ts" é uma classe.</li>
+            </ul>
+
+            <app-componente9> </app-componente9>
+            
+        </div>
+
+        <div class="classe">
+            <h1>Pipe Operations</h1>
+            <ul>
+                <li>O Pipe Operations são recursos para trabalhar com Strings no template;</li>
+                <li>Podemos realizar diversas funções, como deixar o texto em caixa alta;</li>
+                <li>A sintaxe é: "dado|algumPipeOperator" fica dentro de duas chaves;</li>
+                <li>Dessa maneira nos poupamos de regras de CSS ou manipulação de Strings com JS.</li>
+            </ul>
+
+            <app-componente10> </app-componente10>
+            
+        </div>
+
+        <div class="classe">
+            <h1>Two way data binding</h1>
+            <ul>
+                <li>O Two way data binding é um recurso muito interessante para o trabalho com formularios;</li>
+                <li>Basicamente conseguimos alterar props e o template com o preenchimento de inputs;</li>
+                <li>É necessário importar o "FormsModule" no componente principal;</li>
+                <li>Ou seja, será importado no arquivo "app.module.ts" o "FormsModule"</li>
+                <li>Ainda no arquivo "app.module.ts" terá que importar também o "FormsModule" no modulo extra do "imports:[]" </li>
+                <li>E também declarar o ngModel no input, além de preencher também o atributo nome, todos com o mesmo valor.</li>
+            </ul>
+
+            <app-componente11> </app-componente11>
+            
+        </div>
+
+        <div class="classe">
+            <h1>Services</h1>
+            <ul>
+                <li>O Service é outra parte fundamental da arquitetura do Angular;</li>
+                <li>Geralmente ficam as requisições para as APIs que utilizamos no projeto;</li>
+                <li>Precisamos criar o service com: ng generate service "nome";</li>
+                <li>Vamos criar uma pasta chamada "services" atraves do comando:</li>
+                <li>ng generate service services/componente12;</li>
+                <li>Vão ser criado dois arquivos: "componente12.service.spec.ts" e "componente12.service.ts";</li>
+                <li>importar no componente e iniciar no constructor;</li>
+                <li>Depois é possivel acessar os métodos dele.</li>
+            </ul>
+
+            <app-componente12> </app-componente12>
+            
+        </div>
+
+        <div class="classe">
+            <h1>Angular Route</h1>
+            <ul>
+                <li>Nós vamos criar um novo arquivo para declarar nossas rotas;</li>
+                <li>Vamos criar um arquivo dentro da pasta "app" chamado de "app-routing.module.ts"</li>
+                <li>Nele vamos importar os módulos RouterModule e Routes;</li>
+                <li>Após a definição estas rotas precisam ser importadas em "app.module.ts";</li>
+                <li>E por fim no template principal criamos as rotas;</li>
+                <li>E substituímos os componentes por: "router-outlet"</li>
+            </ul>
+
+            <nav>
+                <a routerLink="componente13">Compente 13</a>
+                <br>
+                <a routerLink="/lista">Lista</a>
+            </nav>
+            <router-outlet></router-outlet>
+            
+        </div>
+
+        <div class="classe">
+            <h1>Requisições HTTP</h1>
+            <ul>
+                <li>vamos realizar requisições HTTP nos nossos serviços;</li>
+                <li>Precisamos importar dois pacotes: "HttpClient" e "Http Headers";</li>
+                <li>Neste exemplo utilizaremos uma API local para simular uma request, com o "json-server";</li>
+                <li>Por ultimo é necessário inicializar o módulo "HttpClientModule" em "app.module.ts".</li>
+            </ul>
+
+            <h2>Essa aula tinha q simular uma API, é mais conveniente acompanhar a aula para o entendimento</h2>
+            <p>Link: https://www.youtube.com/watch?v=ADXIedepXfA&list=PLnDvRpP8Bnex2GQEN0768_AxZg_RaIGmw&index=18</p>
+        </div>
+
+        <div class="classe">
+            <h1>Dynamic Routes - Carregando dado individual</h1>
+            <ul>
+                <li>Para resgatar um dado do banco de dados vamos precisar criar uma rota dinamica no nosso router;</li>
+                <li>Baseado no id do item teremos a seleção de dados de banco, geralmente o id vem pela URL;</li>
+                <li>Para resgatar parametros da URL vamos utilizar o "ActivatedRoute", um modulo de angular;</li>
+                <li>A lógica para a requisição HTTP ficará no service.</li>
+            </ul>
+
+            <app-componente14> </app-componente14>
+        </div>
+

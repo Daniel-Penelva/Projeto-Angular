@@ -1,0 +1,12 @@
+
+<h1 *ngIf="canShow">Estamos mostrando a diretiva condicional!</h1>
+
+<h2 *ngIf="nome === 'Daniel'">O nome é Daniel</h2>
+
+<h2 *ngIf="carro === 'Ferrari'; else nameNotFound">Você comprou uma Ferrari</h2>
+
+<ng-template #nameNotFound>
+    <h2>O nome não foi encontrado! Você optou em comprar um {{carro}}</h2>
+</ng-template>
+
+
